@@ -23,7 +23,7 @@ X = iris.data
 pca = PCA(n_components = 2)
 
 # projeção dos dados.
-Z = pca.fit_transform(iris.data)
+Z = pca.fit_transform(X)
 
 # Componentes principais.
 print(pca.components_)
