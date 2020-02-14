@@ -1,3 +1,9 @@
+# -----------------------------------------------------------
+# Exemplo retirado do material de referência sobre SVM com kernel.
+#
+# @author Douglas Moura
+# -----------------------------------------------------------
+
 from sklearn.datasets import make_moons
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures
@@ -8,6 +14,7 @@ import matplotlib.pyplot as plt
 
 X, y = make_moons(n_samples=100, noise=0.15, random_state=42)
 
+# kernel polinomial com grau 3
 polynomial_svm_clf = Pipeline([
         ("poly_features", PolynomialFeatures(degree=3)),
         ("scaler", StandardScaler()),

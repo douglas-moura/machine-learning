@@ -13,13 +13,12 @@ from sklearn import datasets
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.utils.extmath import svd_flip
-from sklearn.datasets import load_digits
 
 # carrega o dataset.
 iris = datasets.load_iris()
 
 # Matriz (150 x 4).
-X = load_digits().data
+X = iris.data
 
 # centraliza os dados na origem.
 X_centered = (X - X.mean(axis=0))
@@ -35,8 +34,6 @@ sigma = np.dot(X_centered.T, X_centered) / m
 
 # decomposição em valores singulares.
 U, s, V = np.linalg.svd(sigma)
-
-print(s)
 
 # correção da saída do svd.
 U, V = svd_flip(U, V)
